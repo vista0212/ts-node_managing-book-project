@@ -4,13 +4,14 @@ import { catchDBError } from '@Lib/error';
 
 const register = async (req: Request, res: Response, next: NextFunction) => {
     const id: User['id'] = req.body.id;
-    const password: User['password'] = req.body.password;
+    const password: User['password'] = res.locals.temp.password;
     const name: User['name'] = req.body.name;
+    const passwordKey: User['passwordKey'] = res.locals.temp.passwordKey;
 
     await User.create({
         id,
         password,
-        passwordKey: '1',
+        passwordKey,
         name,
     }).catch(catchDBError(res));
 
