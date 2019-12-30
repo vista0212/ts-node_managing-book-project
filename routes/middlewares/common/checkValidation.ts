@@ -8,7 +8,6 @@ const checkValidation = (req: Request, res: Response, next: NextFunction) => {
         console.log(error.array());
         throwError(res, 'Wrong_Data', '잘못된 데이터 형식입니다.');
     }
-
     next();
 }
 
