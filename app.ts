@@ -6,6 +6,7 @@ import * as morgan from 'morgan';
 import { connect } from './database/index';
 
 import apiController from './routes/apiController';
+import adminController from './routes/adminController';
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.use(
 );
 
 app.use('/api', apiController);
+app.use('/admin', adminController);
 
 app.use((req, res, next) => {
   // err.status = 404;
