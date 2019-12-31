@@ -21,7 +21,23 @@ const Errors: { [key in ErrorTypes] : IError } = {
     Exist_Data: {
         name: 'Exist Data',
         code: 412,
-    }
-}
+    },
+    Forbidden: {
+        name: 'Forbidden',
+        code: 403,
+    },
+    Token_Expired: {
+        name: 'Token Expired',
+        code: 401,
+    },
+    Unhandled_Error: {
+        name: 'Unhandled Error',
+        code: 500,
+    },
+    JsonWebTokenError: {
+        name: 'JsonWebToken Error',
+        code: 403,
+    },
+};
 
 export default Errors;

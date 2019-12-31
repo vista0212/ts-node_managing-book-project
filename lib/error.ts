@@ -3,7 +3,9 @@ import { ErrorTypes } from "@Lib/types";
 import Errors from '@Lib/errors'
 
 export const catchDBError = (res: Response) => (error: Error) => {
-    console.log(1);
+    
+    console.log(error);
+
     throw res.status(Errors.Database_Error.code).json({
         success: false,
         name: Errors.Database_Error.name,

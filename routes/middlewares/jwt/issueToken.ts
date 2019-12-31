@@ -20,6 +20,7 @@ const issueToken = (req: Request, res: Response, next: NextFunction) => {
     data: {
       userId: user.id,
       userName: user.name,
+      isAdmin: user.admin,
       access_token: accessToken,
     },
   });
