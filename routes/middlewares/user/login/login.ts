@@ -11,8 +11,10 @@ const login = (req: Request, res: Response, next: NextFunction) => {
   }
 
   res.locals.user = {
+    pk: user.pk,
     id: user.id,
     name: user.name,
+    admin: user.admin,
     password,
     passwordKey: res.locals.temp.passwordKey,
   };
