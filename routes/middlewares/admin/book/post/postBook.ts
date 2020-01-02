@@ -6,6 +6,7 @@ const postBook = async (req: Request, res: Response, next: NextFunction) => {
   const user: User = res.locals.user;
   const category: Book['category'] = req.body.category;
   const title: Book['title'] = req.body.title;
+  const description: Book['description'] = req.body.description;
   const author: Book['author'] = req.body.author;
   const translator: Book['translator'] = req.body.translator || undefined;
 
@@ -13,6 +14,7 @@ const postBook = async (req: Request, res: Response, next: NextFunction) => {
     user_pk: user.pk,
     category,
     title,
+    description,
     author,
     translator,
   });
