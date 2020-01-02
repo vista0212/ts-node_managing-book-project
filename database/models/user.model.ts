@@ -1,12 +1,18 @@
 import { Model, DataTypes, HasMany } from 'sequelize';
 
 import { sequelize } from '../index';
+
 import Book from './book.model';
+import BookComment from './bookComment.model';
 
 export default class User extends Model<User> {
     public static associations: {
-        books: HasMany<User, Book>;
+        book: HasMany<User, Book>;
+        bookComment: HasMany<User, BookComment>;
     };
+
+    public book: Book[];
+    public bookComment: BookComment[];
 
     public pk: string;
     public id: string;
@@ -14,8 +20,6 @@ export default class User extends Model<User> {
     public passwordKey: string;
     public admin: boolean;
     public name: string;
-
-    public books: Book[];
 
     public readonly createdAt: Date;
     public readonly updatedAt: Date;

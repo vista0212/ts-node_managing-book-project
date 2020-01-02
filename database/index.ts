@@ -22,8 +22,11 @@ export const sequelize: Sequelize = new Sequelize({
     },
 });
 
+import { associate } from './associate';
+
 export const connect = async (force: boolean, logging?: boolean) => {
     try {
+        associate();
         await sequelize.sync();
     } catch (error) {
         console.log(error);
