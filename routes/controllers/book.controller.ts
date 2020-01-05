@@ -10,6 +10,8 @@ import deleteBookCommentValidation from '@Middleware/book/comment/delete/_valida
 import deleteBookCommnet from '@Middleware/book/comment/delete/deleteBookComment';
 import putBookCommentValidation from '@Middleware/book/comment/put/_validation';
 import putBookComment from '@Middleware/book/comment/put/putBookComment';
+import BookCommentReportValidation from '@Middleware/book/comment/report/_validation';
+import bookCommentReport from '@Middleware/book/comment/report/report';
 
 const router: Router = Router();
 
@@ -18,6 +20,7 @@ router.get('/comment', getBookCommentValidation);
 router.post('/comment', postBookCommentValidation);
 router.put('/comment', putBookCommentValidation);
 router.delete('/comment', deleteBookCommentValidation);
+router.post('/report', BookCommentReportValidation);
 
 router.use(checkValidation);
 
@@ -26,5 +29,6 @@ router.get('/comment', getBookComment);
 router.post('/comment', postBookComment);
 router.put('/comment', putBookComment);
 router.delete('/comment', deleteBookCommnet);
+router.post('/report', bookCommentReport);
 
 export default router;

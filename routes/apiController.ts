@@ -13,5 +13,4 @@ router.use(verifyToken, getUserFromToken);
 
 router.use('/book', bookController);
 
-
 export default router;
