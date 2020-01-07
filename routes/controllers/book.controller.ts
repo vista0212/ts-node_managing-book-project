@@ -12,10 +12,13 @@ import putBookCommentValidation from '@Middleware/book/comment/put/_validation';
 import putBookComment from '@Middleware/book/comment/put/putBookComment';
 import BookCommentReportValidation from '@Middleware/book/comment/report/_validation';
 import bookCommentReport from '@Middleware/book/comment/report/report';
+import postBookLikeValidation from '@Middleware/book/like/_validation';
+import postBookLike from '@Middleware/book/like/postBookLike';
 
 const router: Router = Router();
 
 router.get('/', getBookValidation);
+router.post('/like', postBookLikeValidation);
 router.get('/comment', getBookCommentValidation);
 router.post('/comment', postBookCommentValidation);
 router.put('/comment', putBookCommentValidation);
@@ -25,6 +28,7 @@ router.post('/report', BookCommentReportValidation);
 router.use(checkValidation);
 
 router.get('/', getBook);
+router.post('/like', postBookLike)
 router.get('/comment', getBookComment);
 router.post('/comment', postBookComment);
 router.put('/comment', putBookComment);

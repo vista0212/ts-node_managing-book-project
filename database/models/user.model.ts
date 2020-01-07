@@ -4,15 +4,18 @@ import { sequelize } from '../index';
 
 import Book from './book.model';
 import BookComment from './bookComment.model';
+import BookLike from './bookLike.model';
 
 export default class User extends Model<User> {
     public static associations: {
         book: HasMany<User, Book>;
         bookComment: HasMany<User, BookComment>;
+        bookLike: HasMany<User, BookLike>;
     };
 
     public book: Book[];
     public bookComment: BookComment[];
+    public bookLike: BookLike[];
 
     public pk: string;
     public id: string;
